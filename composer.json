@@ -1,0 +1,32 @@
+{
+    "name": "magik-72/memo",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "guillaume",
+            "email": "guillaume.rival@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "laravel/framework": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.22",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Magik72\\Memo\\": "src/",
+            "Magik72\\Memo\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Magik72\\Memo\\Providers\\MemoServiceProvider"
+            ]
+        }
+    }
+}
