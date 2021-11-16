@@ -19,7 +19,8 @@
     "autoload": {
         "psr-4": {
             "Magik72\\Memo\\": "src/",
-            "Magik72\\Memo\\Tests\\": "tests/"
+            "Magik72\\Memo\\Tests\\": "tests/",
+            "Magik72\\Memo\\Database\\Factories\\": "database/factories/"
         }
     },
     "extra": {
