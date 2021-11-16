@@ -3,7 +3,7 @@
 
 use Magik72\Memo\Tests\Models\MemoableModel;
 
-class HelloWorldTest extends Testcase
+class MemoTest extends Testcase
 {
     public function test_hello_world()
     {
