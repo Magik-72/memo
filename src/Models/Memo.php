@@ -13,6 +13,8 @@ class Memo extends Model
      * @var string[]
      */
     protected $fillable = [
+        'memoable_type',
+        'memoable_id',
         'description',
         'created_at',
         'updated_at'
