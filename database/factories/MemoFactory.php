@@ -15,7 +15,6 @@ class MemoFactory extends Factory
             'memoable_id' => null,
             'memoable_type' => null,
             'description' => $this->faker->sentences(2, true),
-            'priority' => 1
         ];
     }
 

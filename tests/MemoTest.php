@@ -24,12 +24,10 @@ class MemoTest extends Testcase
             'memoable_id' => $this->memoable->id,
             'memoable_type' => MemoableModel::class,
             'description' => 'test test 1',
-            'priority' => 1
         ]);
 
         $this->data = [
             'description' => 'test test 2',
-            'priority' => 2
         ];
     }
 
@@ -40,7 +38,6 @@ class MemoTest extends Testcase
             'memoable_id' => $this->memoable->id,
             'memoable_type' => MemoableModel::class,
             'description' => 'test test 2',
-            'priority' => 2
         ]);
     }
 
@@ -51,7 +48,6 @@ class MemoTest extends Testcase
             'memoable_id' => $this->memoable->id,
             'memoable_type' => MemoableModel::class,
             'description' => 'test test 2',
-            'priority' => 2
         ]);
     }
 

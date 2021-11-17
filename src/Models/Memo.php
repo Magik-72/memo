@@ -13,7 +13,6 @@ class Memo extends Model
      * @var string[]
      */
     protected $fillable = [
-        'priority',
         'description',
     ];
 

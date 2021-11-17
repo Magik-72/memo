@@ -25,7 +25,6 @@ trait MemoableTrait
             'memoable_type' => $this::class,
             'memoable_id' => $this->id,
             'description' => $data['description'] ?? null,
-            'priority' => (int) $data['priority'] ?? null
         ]);
     }
 
@@ -38,7 +37,6 @@ trait MemoableTrait
     {
         return $memoable->update([
             'description' => $data['description'] ?? null,
-            'priority' => (int) $data['priority'] ?? null
         ]);
     }
 
