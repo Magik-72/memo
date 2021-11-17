@@ -3,7 +3,7 @@
 ### Installation ###
 
 * Add Memo to your composer.json file to require Memo :
-`composer require magik-72/memo `
+`composer require magik-72/memo`
 
 
 * Create memos table with migration
