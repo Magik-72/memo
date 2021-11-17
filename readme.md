@@ -6,9 +6,8 @@
 `composer require magik-72/memo `
 
 
+* Create memos table with migration
 `php artisan migrate`
-
-
 
 ### Usage ###
 
