@@ -27,6 +27,8 @@ class MemoTest extends Testcase
         ]);
 
         $this->data = [
+            'memoable_id' => $this->memoable->id,
+            'memoable_type' => MemoableModel::class,
             'description' => 'test test 2',
         ];
     }
@@ -59,18 +61,14 @@ class MemoTest extends Testcase
 
     public function test_get_all_memos()
     {
-        $memoable = new MemoableModel();
-        $memoable->name = "test";
-        $memoable->save();
+        $this->assertTrue($this->memoable->memos()->count() == 1);
 
-        $this->assertTrue($memoable->memos()->count() == 0);
-
-        $memo = $memoable->memoCreate($this->data);
-        $this->assertTrue($memoable->memos()->count() == 1);
+        $memo = $this->memoable->memoCreate($this->data);
+        $this->assertTrue($this->memoable->memos()->count() == 2);
         $this->assertTrue($memo->memoable()->count() == 1);
 
-        $memo = $memoable->memoCreate($this->data);
-        $this->assertTrue($memoable->memos()->count() == 2);
+        $memo = $this->memoable->memoCreate($this->data);
+        $this->assertTrue($this->memoable->memos()->count() == 3);
         $this->assertTrue($memo->memoable()->count() == 1);
     }
 }
