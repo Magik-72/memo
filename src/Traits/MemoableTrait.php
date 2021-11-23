@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 use Magik72\Memo\Models\Memo;
 
@@ -21,11 +22,15 @@ trait MemoableTrait
      */
     public function memoCreate(?array $data = []): Model
     {
-        $data['memoable_type'] = $this::class;
-        $data['memoable_id'] = $this->id;
-        $data['description'] = $data['description'] ?? null;
+        $memo = new Memo();
+        foreach ($data as $index => $d) {
+            if (Schema::hasColumn('memos', $index)) {
+                $memo->$index = $d;
+            }
+        }
+        $memo->save();
 
-        return $this->memos()->create($data);
+        return $memo;
     }
 
     /**
@@ -35,7 +40,14 @@ trait MemoableTrait
      */
     public function memoUpdate(Memo $memo, ?array $data = []): bool
     {
-        return $memo->update($data);
+        foreach ($data as $index => $d) {
+            if (Schema::hasColumn('memos', $index)) {
+                $memo->$index = $d;
+            }
+        }
+        $memo->save();
+
+        return true;
     }
 
     /**
