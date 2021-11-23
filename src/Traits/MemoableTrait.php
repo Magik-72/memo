@@ -16,37 +16,35 @@ trait MemoableTrait
     }
 
     /**
-     * @param  array  $data
+     * @param  array|null  $data
      * @return Model
      */
-    public function memoCreate(array $data): Model
+    public function memoCreate(?array $data = []): Model
     {
-        return $this->memos()->create([
-            'memoable_type' => $this::class,
-            'memoable_id' => $this->id,
-            'description' => $data['description'] ?? null,
-        ]);
+        $data['memoable_type'] = $this::class;
+        $data['memoable_id'] = $this->id;
+        $data['description'] = $data['description'] ?? null;
+
+        return $this->memos()->create($data);
     }
 
     /**
-     * @param  Memo  $memoable
+     * @param  Memo  $memo
      * @param  array|null  $data
      * @return bool
      */
-    public function memoUpdate(Memo $memoable, ?array $data = []): bool
+    public function memoUpdate(Memo $memo, ?array $data = []): bool
     {
-        return $memoable->update([
-            'description' => $data['description'] ?? null,
-        ]);
+        return $memo->update($data);
     }
 
     /**
-     * @param  Memo  $memoable
+     * @param  Memo  $memo
      * @return bool|null
      */
-    public function memoDelete(Memo $memoable): ?bool
+    public function memoDelete(Memo $memo): ?bool
     {
-        return $memoable->delete();
+        return $memo->delete();
     }
 
 }
