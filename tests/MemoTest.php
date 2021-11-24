@@ -1,10 +1,9 @@
 <?php namespace Magik72\Memo\Tests;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Magik72\Memo\Models\Memo;
-use Magik72\Memo\Tests\Models\MemoableModel;
+use Magik72\Memo\Memo;
 
-class MemoTest extends Testcase
+class MemoTest extends TestCase
 {
     use RefreshDatabase;
 

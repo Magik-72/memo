@@ -3,7 +3,7 @@
 namespace Magik72\Memo\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Magik72\Memo\Models\Memo;
+use Magik72\Memo\Memo;
 
 class MemoFactory extends Factory
 {

@@ -1,11 +1,11 @@
-<?php namespace Magik72\Memo\Models;
+<?php namespace Magik72\Memo;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Magik72\Memo\Database\Factories\MemoFactory;
 
-class Memo extends Model
+class Memo extends Model implements MemoContract
 {
     use HasFactory;
 
