@@ -25,26 +25,4 @@ trait MemoableTrait
         return $memo;
     }
 
-    /**
-     * @param  MemoContract  $memo
-     * @param  array|null  $data
-     * @return bool
-     */
-    public function memoUpdate(MemoContract $memo, ?array $data = []): bool
-    {
-        $memo->fill($data);
-        $memo->save();
-
-        return true;
-    }
-
-    /**
-     * @param  Memo  $memo
-     * @return bool|null
-     */
-    public function memoDelete(Memo $memo): ?bool
-    {
-        return $memo->delete();
-    }
-
 }
