@@ -9,6 +9,9 @@ class MemoFactory extends Factory
 {
     protected $model = Memo::class;
 
+    /**
+     * @return array
+     */
     public function definition()
     {
         return [
