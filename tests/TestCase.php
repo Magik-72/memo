@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Magik72\Memo\MemoServiceProvider;
+use Magik72\Memo\Providers\MemoServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {

@@ -42,22 +42,6 @@ class MemoTest extends TestCase
         ]);
     }
 
-    public function test_update_memo_by_memoable()
-    {
-        $this->memoable->memoUpdate($this->memo, $this->data);
-        $this->assertDatabaseHas('memos', [
-            'memoable_id' => $this->memoable->id,
-            'memoable_type' => MemoableModel::class,
-            'description' => 'test test 2',
-        ]);
-    }
-
-    public function test_delete_memo_by_memoable()
-    {
-        $this->memoable->memoDelete($this->memo);
-        $this->assertModelMissing($this->memo);
-    }
-
     public function test_get_all_memos()
     {
         $this->assertTrue($this->memoable->memos()->count() == 1);
