@@ -45,11 +45,9 @@ class MemoTest extends TestCase
     public function test_get_all_memos()
     {
         $this->assertTrue($this->memoable->memos()->count() == 1);
-
         $memo = $this->memoable->memoCreate($this->data);
         $this->assertTrue($this->memoable->memos()->count() == 2);
         $this->assertTrue($memo->memoable()->count() == 1);
-
         $memo = $this->memoable->memoCreate($this->data);
         $this->assertTrue($this->memoable->memos()->count() == 3);
         $this->assertTrue($memo->memoable()->count() == 1);
